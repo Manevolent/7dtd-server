@@ -23,6 +23,11 @@ install_or_update()
 {
 	# Install 7 Days to Die from install.txt
 	echo "Installing/updating 7 Days to Die.. (this might take a while, be patient)"
+	echo "@sSteamCmdForcePlatformType linux
+login anonymous
+force_install_dir /steamcmd/7dtd
+app_update 294420 -beta $SEVEN_DAYS_TO_DIE_UPDATE_BRANCH validate
+quit" > /install.txt
 	bash /steamcmd/steamcmd.sh +runscript /install.txt
 
 	# Terminate if exit code wasn't zero
